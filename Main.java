@@ -60,7 +60,7 @@ public class Main {
         buttonGroup.add(maleButton);
         buttonGroup.add(femaleButton);
 
-        String gender = maleButton.isSelected() ? "Male" : "Female";
+
 
         JLabel passwordLabel = new JLabel("Password :");
         passwordLabel.setBounds(20,220,200,25);
@@ -106,7 +106,8 @@ public class Main {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String d = date.getSelectedItem() + (String)month.getSelectedItem() + year.getSelectedItem();
+                String gender = maleButton.isSelected() ? "Male" : "Female";
+                String d = (String) date.getSelectedItem() + month.getSelectedItem() + year.getSelectedItem();
                 try {
                     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/new","root","");
 
